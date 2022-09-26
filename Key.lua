@@ -8,12 +8,16 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-_G.Key = "AhJoLbaaHqqss" -- You Put Your Key Here
+_G.Key = "AhJoLbaaHqqss"
+_G.PremiumKey = "AsPkksLmansqs"
 _G.KeyInput = "string"
 
 function MakeScriptHub()
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/CoffeeClub62/AstraHub/main/CK.lua"), true))() -- You Put Your Script Here
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/CoffeeClub62/AstraHub/main/CobraKai.lua"), true))() -- You Put Your Script Here
+end
 
+function MakePremiumScriptHub()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/CoffeeClub62/AstraHub/main/CobraKai.lua"), true))() -- You Put Your Script Here
 end
 
 
@@ -55,6 +59,18 @@ Tab:AddButton({
 	Callback = function()
         if _G.KeyInput == _G.Key then
          MakeScriptHub()
+         CorrectKeyNotifications()
+     else
+        WrongKeyNotifications()
+        end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Confira a Key Premium",
+	Callback = function()
+        if _G.KeyInput == _G.PremiumKey then
+         MakePremiumScriptHub()
          CorrectKeyNotifications()
      else
         WrongKeyNotifications()
